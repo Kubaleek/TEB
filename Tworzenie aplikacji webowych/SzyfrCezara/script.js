@@ -12,7 +12,11 @@ const PlusValue = () => {
 
 const MinusValue = () => {
     const key = document.getElementById('key');
-    key.value = parseInt(key.value) - 1
+    key.value > -25 ? (
+        key.value = parseInt(key.value) - 1
+    ) : (
+        alert("Osiągnąłeś Limit")
+    )
 }
 
 const Szyfr = (przesuniecie, tekst) => {
@@ -71,8 +75,12 @@ const Deszyfr = (przesuniecie, tekst) => {
 const Szyfruj = () => {
     const przesuniecie = parseInt(document.getElementById("key").value);
     const tekst = document.getElementById("text").value;
-    const zaszyfrowany = Szyfr(przesuniecie, tekst);
-    document.getElementById("s").innerHTML = zaszyfrowany;
+    if(tekst === ''){
+        alert("Uzupełnij Pole Tekstu")
+    } else {
+        const zaszyfrowany = Szyfr(przesuniecie, tekst);
+        document.getElementById("s").innerHTML = zaszyfrowany;
+    }
 }
 
 const Deszyfruj = () => {
