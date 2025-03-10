@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SzyfrCezaraJS</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="p-3">
+    <div class="d-flex gap-3 flex-column">
+        <div>
+            <h1>SzyfrCezara</h1>
+            <div class="col-12 col-sm-2 d-flex flex-column gap-2">
+                <div class="form-group d-flex flex-column gap-2">
+                    <label for="text">Podaj Tekst do Szyfrowania:</label>
+                    <input type="text" class="p-1 border border-black" id="text">
+                </div>
+                <div class="form-group d-flex flex-column gap-2">
+                    <label for="text">Podaj Przesunięcie:</label>
+                    <div class="d-flex align-items-center gap-2">
+                        <button onclick="MinusValue()" class="p-1 col-1 fs-6 fw-bold d-flex justify-content-center align-items-center text-white border border-white btn btn-secondary rounded">
+                            &lt;
+                        </button>
+                        <input type="text" value="0" max="25" disabled readonly class="p-2 border col-3 border-black rounded bg-light text-dark" id="key">
+                        <button type="button" onclick="PlusValue()" class="p-1 col-1 fs-6 fw-bold d-flex justify-content-center align-items-center text-white border border-white btn btn-secondary rounded">
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                    <button type="button" onclick="Szyfruj()" class="btn btn-primary">Szyfruj</button>
+                    <button type="button" onclick="Deszyfruj()" class="btn btn-primary">Deszyfruj</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Wyniki</h2>
+            <div class="fw-bold">
+                <p class="p-0 m-0">S: <span id="s"></span></p>
+                <p class="p-0 m-0">D: <span id="d"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
