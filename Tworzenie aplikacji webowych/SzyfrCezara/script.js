@@ -1,6 +1,21 @@
 const AlfabetDuze = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
 const AlfabetMale = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'x', 'y', 'z'];
 
+
+const InputHandler = () => {
+    const text = document.getElementById("text").value;
+    const key = document.getElementById("key");
+    const textSplit = text.split('#');
+
+    if(text.includes("#")){
+        const [przesuniecie] = textSplit;
+        key.value = przesuniecie;
+    }
+
+}
+
+
+
 const PlusValue = () => {
     const key = document.getElementById('key');
     key.value < 25 ? (
@@ -69,7 +84,7 @@ const Deszyfr = (przesuniecie, tekst) => {
         }
     }
 
-    return `${przesuniecie}#${w.join('')}`;
+    return `${w.join('')}`;
 }
 
 const Szyfruj = () => {
